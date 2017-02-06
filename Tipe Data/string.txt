@@ -1,0 +1,109 @@
+Tipe data string --> tipe data yang berisi text, kalimat, atau kumpulan karakter. 
+contoh : 
+"a"
+"tipe data string" atau 
+"t1p3 d4t4 str1n9?!"
+
+Tipe data string --> tipe data yang paling sering digunakan, dan memiliki banyak fitur yang disediakan PHP. Karakter yang didukung saat ini adalah 256 karakter ASCII.
+
+Cara Penulisan Tipe Data String dalam PHP
+1. Dengan Single Quoted / tanda petik satu ('...')
+merupakan cara penulisan paling sederhana. Untuk string yang didalamnya juga terdapat tanda petik satu, kita harus mendahuluinya dengan karakter backslash (\) agar tidak dianggap sebagai penutup string. Dan jika di dalam string anda ingin menulis tanda backslash, kita harus menulisnya 2 kali (\\).
+Contoh :
+<?php
+$string1='Ini adalah string sederhana';
+ 
+$string2='Ini adalah string
+yang bisa memiliki beberapa
+baris';
+ 
+$string3='Dia berkata: "I\'ll be back"';
+ 
+$string4='Anda telah berhasil menghapus C:\\xampp\\htdoc';
+ 
+$string5='Kalimat ini tidak akan pindah ke: \n baris baru';
+ 
+$string6='Variabel juga tidak otomatis ditampilkan $string1 dan $string3';
+ 
+echo $string1; echo "<br>";
+echo $string2; echo "<br>";
+echo $string3; echo "<br>";
+echo $string4; echo "<br>";
+echo $string5; echo "<br>";
+echo $string6;
+?>
+
+2. Double Quoted / tanda petik dua ("...")
+Dengan double quoted, PHP akan memproses karakter-karakter khusus seperti carriage return (\n), dan karakter tab (\t) dan juga memproses setiap variabel (yang ditandai dengan tanda $ didepan kata).
+Contoh karakter khusus yang dapat diproses Double Quoted :
+\"	Karakter Tanda petik dua
+\n	Karakter Newline
+\r	Karakter Carriage return
+\t	Karakter Tab
+\\	Karakter Backslash
+\$	Karakter Dollar Sign
+\{	Karakter Pembuka Kurung Kurawal
+\}	Karakter Penutup Kurung Kurawal
+\[	Karakter Pembuka Kurung Siku
+\]	Karakter Penutup Kurung Kurawal
+\0 sampai \777	Karakter ASCII menggunakan nilai oktal
+\x0 sampai \xFF	Karakter ASCII menggunakan nilai heksadesimal
+
+Contoh :
+<?php
+$string1="Ini adalah string sederhana";
+ 
+$string2="Ini adalah string
+yang bisa memiliki beberapa
+baris";
+ 
+$string3="Dia berkata: \"I'll be back\"";
+ 
+$string4="Anda telah berhasil menghapus C:\\xampp\\htdoc";
+ 
+$string5="Kalimat ini akan akan pindah ke: \n baris baru";
+ 
+$string6="Variabel akan otomatis ditampilkan: $string1 dan $string3";
+ 
+echo $string1; echo "<br \>";
+echo $string2; echo "<br \>";
+echo $string3; echo "<br \>";
+echo $string4; echo "<br \>";
+echo $string5; echo "<br \>";
+echo $string6;
+?>
+
+3. Dengan Heredoc
+Membuat tipe data string yang dapat berisi beberapa baris kalimat. Heredoc ditandai dengan tanda “<<<” untuk memulai string, lalu diikuti dengan karakter penanda akhir string. Dari contoh kata yang digunakan  adalah “end” pada awal string adalah penanda akhir string. Kata “end” bebas diganti dengan kata atau karakter lain, sepanjang kata tersebut bisa dijamin tidak akan muncul didalam string.
+Pada Heredoc karekater khusus dan variable akan diproses dalam PHP.
+
+contoh :
+<?php
+$Jum=4;
+$string1 = <<<end
+Saya sedang mempelajari Materi PHP <br />
+Kali ini membahas tentang tipe Data. \n Tipe data kali ini adalah String</br>
+Dengan banyak cara penulisan adalah $Jum :)
+end;
+ 
+echo $string1;
+?>
+
+
+!!! Setelah tanda penututup heredoc (di dalam contoh diatas adalah kata ‘end‘) dan tanda titik koma “;” , tidak boleh ada spasi atau karakter apapun.
+
+4. Dengan Nowdoc
+Hampis sama dengan HEREDOC. Namun karakter khusus dan variabel tidak akan diproses oleh PHP, atau mirip dengan single quoted string.
+Contoh :
+<?php
+$Jum=4;
+$string1 = <<< 'end'
+Saya sedang mempelajari Materi PHP <br />
+Kali ini membahas tentang tipe Data. \n Tipe data kali ini adalah String</br>
+Dengan banyak cara penulisan adalah $Jum :)
+end;
+ 
+echo $string1;
+?>
+
+!! Perbedaan dengan Heredoc terletak pada pemberian karakter penanda akhir string yang menggunakan kutip satu untuk mengapitnya ($string1 = <<< 'end')
