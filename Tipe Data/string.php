@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>Belajar cara menampilkan Integer PHP</title>
+<title>Belajar cara menampilkan String PHP</title>
 </head>
 <body>
 
