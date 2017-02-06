@@ -1,0 +1,39 @@
+Tipe data boolean adalah tipe data paling sederhana dalam PHP dan juga dalam bahasa pemograman lainnya. Tipe data ini hanya memiliki 2 nilai, yaitu true (benar) dan false (salah). Biasanya digunakan dalam operasi logika seperti kondisi if, dan perulangan (looping).
+
+Cara Penulisan Boolean dalam PHP
+--> Nilai true dan false bersifat non case sensitif. Sehingga bebas cara penulisan besar kecilnya huruf.
+Contoh :
+<?php
+$benar=true;
+$salah=false;
+ 
+echo "benar = $benar, salah = $salah";
+// hasil output: benar = 1, salah =
+?>
+
+Konversi Tipe Data Lain Menjadi Boolean
+--> Karena PHP adalah loosely tiped language, atau bahasa pemograman yang tidak bertipe,sebuah variabel dapat di konversi menjadi tipe data lainnya.
+
+Aturan tipe data boolean jika dikonversi dari tipe data lainnya:
+
+   1. Integer 0, dianggap sebagai false.
+   2. Float 0.0, dianggap sebagai false.
+   3. String kosong (“”) dan string “0” dianggap sebagai false.
+   4. Array tanpa elemen, dianggap sebagai false.
+   5. Objek dengan tanpa nilai dan fungsi, dianggap sebagai false.
+   6. Nilai null, dianggap sebagai false.
+
+!! Selain 6 Kondisi diatas semua yang dikonveksikan akan bernilai "true"
+Contoh :
+<?php
+   $x = FALSE; // false
+   $x = ""; // false
+   $x = " "; // true
+   $x = 1; // true
+   $x = -2; // true
+   $x = "belajar"; // true
+   $x = 3.14; // true
+   $x = array(); // false
+   $x = array(12); // true
+   $x = "false"; // true
+?>
