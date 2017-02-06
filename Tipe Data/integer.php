@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>Belajar cara menampilkan Konstanta PHP</title>
+<title>Belajar cara menampilkan Integer PHP</title>
 </head>
 <body>
 
